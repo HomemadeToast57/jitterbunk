@@ -6,6 +6,23 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-bottom: 40px;
+}
+
+.dash_name {
+    font-size: 40px;
+    margin: 0px 12px;
+}
+
+.bunk_boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.box_title {
+    font-size: 30px;
+    margin: 15px;
+    align-self: baseline;
 }
 
 .bunk_inbox {
@@ -14,6 +31,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 20px;
+}
+
+h2#send_bunk.box_title {
+    margin: 15px 0px;
 }
 
 .bunk_outbox {
@@ -21,4 +43,73 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 20px;
+}
+
+.bunk_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bunk_list_item {
+    width: 47vw;
+    height: 40px;
+    margin: 8px 0px;
+    padding: 8px 11px;
+    border-radius: 10px;
+    background-color: #f2f4f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bunk_message {
+    align-self: flex-start;
+    font-size: 20;
+    font-weight: 650;
+}
+
+.bunk_date {
+    align-self:flex-end;
+    font-size: 15;
+}
+
+.to_select, .bunk_submit{
+    background-color: #f2f4f4;
+    font-size: 15px;
+    width: 625px;
+    margin: 5px 0px;
+    padding: 8px 11px;
+    border: none;
+    border-radius: 10px;
+}
+
+.no_bunks {
+    align-self: baseline;
+    margin: -4px;
+}
+
+.to_select {
+    height: 40px;
+}
+
+.to_select:hover {
+    cursor:pointer;
+}
+
+.bunk_submit {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.bunk_submit:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.user_list_element:visited {
+    font-style: none;
+    color: black;
 }

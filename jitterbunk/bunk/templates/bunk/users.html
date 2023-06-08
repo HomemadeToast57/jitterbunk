@@ -1,14 +1,29 @@
 <html>
-<h1>Users</h2>
-{% if users %}
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bunk/style.css' %}" />
+  </head>
+  <body>
+    <h1 class="dash_name">Bunkbox Users 📇</h1>
+    {% if users %}
     <ul>
-    {% for user in users %}
-        <a href="{% url 'bunk:personal_feed' user.id %}">
-            <h2>{{user.username}}</h2>
-        </a>
-    {% endfor %}
+      {% for user in users %}
+      <a href="{% url 'bunk:personal_feed' user.id %}">
+        <li class="user_list_element">{{user.username}}</li>
+      </a>
+      {% endfor %}
     </ul>
-{% else %}
+    {% else %}
     <p>No users.</p>
-{% endif %}
+    {% endif %}
+
+    <h3 class="box_title">Create a New User</h3>
+
+    <form class="bunk_form bunk_inbox" action="{% url 'bunk:create_user' %}" method="post">
+      {% csrf_token %}
+      <input type="textfield" id="username" name="username" class="to_select" placeholder="Username">
+      <input type="textfield" id="photo" name="photo" class="to_select" placeholder="Password">
+      <button type="submit" class="bunk_submit">Submit</button>
+    </form>
+  </body>
 </html>

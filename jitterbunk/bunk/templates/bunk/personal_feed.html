@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bunk/style.css' %}" />
+    </head>
+    <body>
+        <div class="personal_feed_page">
+            <div class="bunk_inbox">
+                <h1>{{user.username}}'s Bunks</h1>
+                {% if bunks %}
+                <h2>THERE ARE BUNKS</h2>
+                {% else %}
+                <h2>There are no bunks</h2>
+                {% endif %}
+            </div>
+            <div class="bunk_outbox">
+                <h1>Send a bunk</h1>
+                <h2>Users: {{allusers|length}}</h2>
+                <form action="{% url 'bunk:submit_bunk' %}" method="post">
+                    {% csrf_token %}
+                    <select id="recipient" name='to_user'>
+                        {% for usr in allusers %}
+                        <option value={{usr.id}}>{{usr.username}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" value="{{user.id}}" name='from_user'>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

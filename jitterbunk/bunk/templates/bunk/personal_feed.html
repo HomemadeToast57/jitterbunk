@@ -4,16 +4,16 @@
     <link rel="stylesheet" href="{% static 'bunk/style.css' %}" />
   </head>
   <body>
-    <h1 class="dash_name">{{user.username}}'s Bunkbox  📫</h1>
+    <h1 class="dash_name">{{user.username}}'s Bunkbox 📫</h1>
     <div class="personal_feed_page">
       <div class="bunk_boxes">
-          <h2 class="box_title">Inbox</h2>
+        <h2 class="box_title">Inbox</h2>
         <div class="bunk_inbox">
           {% if incoming_bunk_list %} {% for bunk in incoming_bunk_list %}
           <div class="bunk_list_item">
             <div class="bunk_message">
-                {{bunk.from_user.username}} bunked you!
-              </div>
+              {{bunk.from_user.username}} bunked you!
+            </div>
             <div class="bunk_date">🗓️: {{bunk.pub_date}}</div>
           </div>
           {% endfor %} {% else %}
@@ -50,7 +50,7 @@
             {% endfor %}
           </select>
           <input type="hidden" value="{{user.id}}" name="from_user" />
-          <button type="submit"   class="bunk_submit">Submit</button>
+          <button type="submit" class="bunk_submit">Submit</button>
         </form>
       </div>
     </div>
